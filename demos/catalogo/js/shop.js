@@ -424,3 +424,4 @@ function setupEvents() {
 }
 
 document.addEventListener("DOMContentLoaded", init);
+

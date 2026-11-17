@@ -70,7 +70,7 @@ negocios-web-demos/
 
 ---
 
-## 🌐 Publicación en GitHub Pages
+<!-- ## 🌐 Publicación en GitHub Pages
 
 Para publicar y compartir este catálogo con clientes:
 
@@ -86,4 +86,4 @@ En tu repositorio de GitHub:
 3. Selecciona la rama `main` y `/ (root)`.
 4. Haz clic en **Save**.
 
-¡Quedará activo en: `https://yoider98.github.io/negocios-web-demos/`!
+¡Quedará activo en: `https://yoider98.github.io/negocios-web-demos/`! -->
