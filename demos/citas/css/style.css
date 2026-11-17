@@ -71,6 +71,49 @@ body {
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
+/* =========================================
+   BARRA DE RETORNO AL SITIO WEB
+   ========================================= */
+.top-nav-return {
+  background: #ffffff;
+  border-bottom: 1px solid var(--border);
+  padding: 10px 0;
+}
+
+.return-container {
+  max-width: 580px;
+  margin: 0 auto;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.link-return {
+  color: var(--primary);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.link-return:hover {
+  text-decoration: underline;
+  transform: translateX(-2px);
+}
+
+.return-tag {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
 .sales-banner-content {
   max-width: 900px;
   margin: 0 auto;
@@ -774,3 +817,4 @@ body {
   line-height: 1.5;
   margin-bottom: 20px;
 }
+

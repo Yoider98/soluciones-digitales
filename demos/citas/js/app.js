@@ -352,3 +352,4 @@ function setupEventListeners() {
 
 // Iniciar app
 document.addEventListener("DOMContentLoaded", init);
+

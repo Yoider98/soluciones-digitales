@@ -3,223 +3,437 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Agendamiento de Citas Online | Demo Comercial</title>
-  <!-- Google Fonts & Remix Icons -->
+  <title>Élite Studio & Spa | Barbería, Estética y Cuidado Personal</title>
+  <meta name="description" content="Sitio web oficial de Élite Studio & Spa. Servicios de barbería clásica, estética, cuidado de barba y paquetes VIP. Agenda tu cita en línea.">
+  
+  <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/landing.css">
 </head>
 <body>
 
-  <!-- Barra Comercial Superior para Venta -->
+  <!-- Barra Comercial Superior de Venta -->
   <aside class="sales-banner">
     <div class="sales-banner-content">
       <span class="badge-demo"><i class="ri-flashlight-line"></i> DEMO EN VIVO</span>
-      <p class="banner-text">¿Quieres una app como esta con tu logo y catálogo para tu negocio?</p>
-      <a href="https://wa.me/573144399660?text=Hola%20Yoider,%20estoy%20probando%20la%20demo%20de%20Citas%20y%20quiero%20cotizarla%20para%20mi%20negocio." 
+      <p class="banner-text">¿Te gustaría una página web completa como esta con sistema de citas para tu negocio?</p>
+      <a href="https://wa.me/573144399660?text=Hola%20Yoider,%20estoy%20viendo%20la%20p%C3%A1gina%20demo%20de%20Barber%C3%ADa/Spa%20y%20quiero%20cotizar%20una%20similar%20para%20mi%20negocio." 
          target="_blank" class="btn-banner-cta">
         <i class="ri-whatsapp-line"></i> Cotizar para mi negocio
       </a>
     </div>
   </aside>
 
-  <!-- Contenedor Principal de la App (Mobile-First / Card) -->
-  <main class="app-container">
-    
-    <!-- Selector de Tipo de Negocio (Para que el cliente vea la versatilidad) -->
-    <header class="app-header">
-      <div class="business-brand">
-        <div class="business-avatar" id="businessIcon">
-          <i class="ri-scissors-2-line"></i>
+  <!-- Navbar del Negocio -->
+  <header class="biz-navbar">
+    <div class="biz-nav-container">
+      <a href="index.html" class="biz-brand">
+        <div class="biz-logo-icon"><i class="ri-scissors-2-fill"></i></div>
+        <div class="biz-brand-text">
+          <span class="brand-title">ÉLITE</span>
+          <span class="brand-sub">STUDIO & SPA</span>
         </div>
-        <div class="business-info">
-          <h1 id="businessName">Barbería & Spa Élite</h1>
-          <p id="businessSubtitle"><i class="ri-map-pin-2-fill"></i> Cl. Principal # 10 - 20 &bull; Abierto hoy</p>
-        </div>
+      </a>
+
+      <nav class="biz-nav-links" id="navLinks">
+        <a href="#inicio">Inicio</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#paquetes">Paquetes VIP</a>
+        <a href="#experiencia">Por qué nosotros</a>
+        <a href="#testimonios">Opiniones</a>
+        <a href="#ubicacion">Contacto</a>
+      </nav>
+
+      <div class="biz-nav-actions">
+        <a href="agendar.html" class="btn btn-book-nav">
+          <i class="ri-calendar-check-line"></i> Agendar Cita
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="biz-hero" id="inicio">
+    <div class="hero-overlay"></div>
+    <div class="container biz-hero-content">
+      <div class="hero-badge-pill">
+        <i class="ri-star-smile-fill"></i> La mejor experiencia en cuidado y estilo personal
+      </div>
+      <h1 class="biz-hero-title">
+        El estilo y la precisión que <span>tu imagen merece</span>
+      </h1>
+      <p class="biz-hero-desc">
+        Disfruta de una atención de primera clase con maestros barberos y especialistas en estética. Relájate en un espacio diseñado exclusivamente para tu comodidad.
+      </p>
+
+      <div class="biz-hero-btns">
+        <a href="agendar.html" class="btn btn-hero-primary">
+          <i class="ri-calendar-2-line"></i> Agendar Mi Cita Online
+        </a>
+        <a href="#paquetes" class="btn btn-hero-secondary">
+          <i class="ri-gift-line"></i> Ver Paquetes & Promos
+        </a>
       </div>
 
-      <!-- Selector de plantilla rápida para impresionar al cliente -->
-      <div class="theme-selector">
-        <label for="nicheSelect"><i class="ri-palette-line"></i> Ver ejemplo como:</label>
-        <select id="nicheSelect">
-          <option value="barber">💈 Barbería / Peluquería</option>
-          <option value="spa">💆‍♀️ Spa & Estética</option>
-          <option value="dental">🩺 Consultorio / Dental</option>
-          <option value="pet">🐾 Veterinaria / Pet Shop</option>
-        </select>
+      <!-- Quick Trust Badges -->
+      <div class="trust-grid">
+        <div class="trust-item">
+          <i class="ri-user-heart-line"></i>
+          <div>
+            <strong>+2.800</strong>
+            <span>Clientes satisfechos</span>
+          </div>
+        </div>
+        <div class="trust-item">
+          <i class="ri-cup-line"></i>
+          <div>
+            <strong>Cortesía</strong>
+            <span>Café gourmet & bebida</span>
+          </div>
+        </div>
+        <div class="trust-item">
+          <i class="ri-time-line"></i>
+          <div>
+            <strong>Cero esperas</strong>
+            <span>Puntualidad en tu cita</span>
+          </div>
+        </div>
       </div>
-    </header>
+    </div>
+  </section>
 
-    <!-- Indicador de Pasos -->
-    <nav class="steps-progress" aria-label="Progreso de agendamiento">
-      <div class="step-pill active" data-step="1">
-        <span class="step-num">1</span>
-        <span class="step-label">Servicio</span>
+  <!-- Sección Servicios Individuales -->
+  <section class="biz-section" id="servicios">
+    <div class="container">
+      <div class="section-title text-center">
+        <span class="sub-title">NUESTROS SERVICIOS</span>
+        <h2>Cortes, Barba & Cuidado Especializado</h2>
+        <p>Técnicas modernas y clásicas aplicadas por profesionales apasionados.</p>
       </div>
-      <div class="step-divider"></div>
-      <div class="step-pill" data-step="2">
-        <span class="step-num">2</span>
-        <span class="step-label">Horario</span>
+
+      <div class="services-grid">
+        
+        <div class="service-item-card">
+          <div class="service-card-icon"><i class="ri-scissors-cut-line"></i></div>
+          <div class="service-card-info">
+            <div class="service-header-row">
+              <h3>Corte Clásico & Peinado</h3>
+              <span class="price-tag">$25.000</span>
+            </div>
+            <p>Diagnóstico de visagismo, corte personalizado a tijera o máquina, lavado y styling con cera mate.</p>
+            <div class="service-footer-row">
+              <span><i class="ri-time-line"></i> 35 minutos</span>
+              <a href="agendar.html" class="btn-service-book">Agendar</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-item-card">
+          <div class="service-card-icon"><i class="ri-fire-line"></i></div>
+          <div class="service-card-info">
+            <div class="service-header-row">
+              <h3>Ritual de Barba Spa</h3>
+              <span class="price-tag">$22.000</span>
+            </div>
+            <p>Delineado preciso con navaja japonesa, toallas calientes aromatizadas, aceites esenciales y bálsamo hidratante.</p>
+            <div class="service-footer-row">
+              <span><i class="ri-time-line"></i> 30 minutos</span>
+              <a href="agendar.html" class="btn-service-book">Agendar</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-item-card">
+          <div class="service-card-icon"><i class="ri-sparkles-line"></i></div>
+          <div class="service-card-info">
+            <div class="service-header-row">
+              <h3>Limpieza Facial Exfoliante</h3>
+              <span class="price-tag">$35.000</span>
+            </div>
+            <p>Vapor de ozono, mascarilla de carbón activado para puntos negros e hidratación profunda con sérum.</p>
+            <div class="service-footer-row">
+              <span><i class="ri-time-line"></i> 40 minutos</span>
+              <a href="agendar.html" class="btn-service-book">Agendar</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-item-card">
+          <div class="service-card-icon"><i class="ri-paint-brush-line"></i></div>
+          <div class="service-card-info">
+            <div class="service-header-row">
+              <h3>Camuflaje de Canas & Color</h3>
+              <span class="price-tag">$40.000</span>
+            </div>
+            <p>Tonalización sutil y natural de canas en barba o cabello sin efecto tinte artificial.</p>
+            <div class="service-footer-row">
+              <span><i class="ri-time-line"></i> 30 minutos</span>
+              <a href="agendar.html" class="btn-service-book">Agendar</a>
+            </div>
+          </div>
+        </div>
+
       </div>
-      <div class="step-divider"></div>
-      <div class="step-pill" data-step="3">
-        <span class="step-num">3</span>
-        <span class="step-label">Tus Datos</span>
+    </div>
+  </section>
+
+  <!-- Sección Paquetes VIP & Promociones -->
+  <section class="biz-section bg-alt" id="paquetes">
+    <div class="container">
+      <div class="section-title text-center">
+        <span class="sub-title">COMBOS Y PAQUETES</span>
+        <h2>Ahorra con nuestros Paquetes Especiales</h2>
+        <p>Diseñados para que salgas renovado y listo para cualquier evento.</p>
       </div>
-    </nav>
 
-    <!-- Contenido de los Pasos -->
-    <div class="booking-card">
-      
-      <!-- PASO 1: Selección de Servicio -->
-      <section class="step-content active" id="step1">
-        <div class="section-title">
-          <h2>Elige el servicio que deseas</h2>
-          <p>Selecciona una o más opciones para tu cita</p>
-        </div>
-
-        <div class="services-list" id="servicesList">
-          <!-- Renderizado dinámico desde app.js -->
-        </div>
-
-        <div class="step-actions">
-          <button type="button" class="btn btn-primary" id="btnToStep2" disabled>
-            Continuar a Fecha y Hora <i class="ri-arrow-right-line"></i>
-          </button>
-        </div>
-      </section>
-
-      <!-- PASO 2: Especialista, Fecha y Hora -->
-      <section class="step-content" id="step2">
-        <div class="section-title">
-          <h2>Fecha y Horario</h2>
-          <p>Elige tu día preferido y el horario que más te convenga</p>
-        </div>
-
-        <!-- Selección de Profesional -->
-        <div class="form-group">
-          <label class="form-label"><i class="ri-user-star-line"></i> ¿Quién deseas que te atienda?</label>
-          <div class="staff-grid" id="staffGrid">
-            <!-- Renderizado dinámico -->
+      <div class="packages-grid">
+        
+        <!-- Paquete 1 -->
+        <div class="package-card">
+          <div class="pkg-header">
+            <h3>Combo Ejecutivo</h3>
+            <p>El favorito semanal para mantener tu presencia impecable.</p>
+            <div class="pkg-price">
+              <span class="curr">$</span><strong>40.000</strong>
+              <small class="old-price">$47.000</small>
+            </div>
           </div>
+          <ul class="pkg-features">
+            <li><i class="ri-check-fill"></i> Corte de Cabello Personalizado</li>
+            <li><i class="ri-check-fill"></i> Perfilado & Afeitado de Barba</li>
+            <li><i class="ri-check-fill"></i> Lavado con masaje capilar</li>
+            <li><i class="ri-check-fill"></i> Café expreso de cortesía</li>
+          </ul>
+          <a href="agendar.html" class="btn btn-package">
+            Reservar Paquete <i class="ri-arrow-right-line"></i>
+          </a>
         </div>
 
-        <!-- Selector de Días (Próximos 7 días) -->
-        <div class="form-group">
-          <label class="form-label"><i class="ri-calendar-event-line"></i> Selecciona el día</label>
-          <div class="days-slider" id="daysSlider">
-            <!-- Generado con JS -->
+        <!-- Paquete 2 (Destacado) -->
+        <div class="package-card featured">
+          <div class="pkg-badge">MÁS POPULAR</div>
+          <div class="pkg-header">
+            <h3>Experiencia VIP Élite</h3>
+            <p>Cuidado integral de pies a cabeza con máxima relajación.</p>
+            <div class="pkg-price">
+              <span class="curr">$</span><strong>65.000</strong>
+              <small class="old-price">$82.000</small>
+            </div>
           </div>
+          <ul class="pkg-features">
+            <li><i class="ri-check-fill"></i> Corte de Autor + Peinado</li>
+            <li><i class="ri-check-fill"></i> Ritual Spa de Barba (Toallas calientes)</li>
+            <li><i class="ri-check-fill"></i> Limpieza Facial Exfoliante con Carbón</li>
+            <li><i class="ri-check-fill"></i> Masaje cuello y hombros relajante</li>
+            <li><i class="ri-check-fill"></i> Bebida premium (Cerveza artesanal / Café)</li>
+          </ul>
+          <a href="agendar.html" class="btn btn-package-primary">
+            Reservar Experiencia VIP <i class="ri-arrow-right-line"></i>
+          </a>
         </div>
 
-        <!-- Selector de Horas Disponibles -->
-        <div class="form-group">
-          <label class="form-label"><i class="ri-time-line"></i> Horarios disponibles</label>
-          <div class="hours-grid" id="hoursGrid">
-            <!-- Generado con JS -->
+        <!-- Paquete 3 -->
+        <div class="package-card">
+          <div class="pkg-header">
+            <h3>Combo Novio / Graduación</h3>
+            <p>Pensado para lucir memorable en tus ocasiones más importantes.</p>
+            <div class="pkg-price">
+              <span class="curr">$</span><strong>90.000</strong>
+              <small class="old-price">$110.000</small>
+            </div>
           </div>
+          <ul class="pkg-features">
+            <li><i class="ri-check-fill"></i> Asesoría de Imagen y Visagismo</li>
+            <li><i class="ri-check-fill"></i> Corte Premium + Barba Completa</li>
+            <li><i class="ri-check-fill"></i> Mascarilla Black Head + Ozonoterapia</li>
+            <li><i class="ri-check-fill"></i> Manicura express masculina</li>
+            <li><i class="ri-check-fill"></i> Kit de mini productos para el evento</li>
+          </ul>
+          <a href="agendar.html" class="btn btn-package">
+            Reservar Paquete <i class="ri-arrow-right-line"></i>
+          </a>
         </div>
 
-        <div class="step-actions dual">
-          <button type="button" class="btn btn-outline" id="btnBackToStep1">
-            <i class="ri-arrow-left-line"></i> Volver
-          </button>
-          <button type="button" class="btn btn-primary" id="btnToStep3" disabled>
-            Continuar a tus datos <i class="ri-arrow-right-line"></i>
-          </button>
-        </div>
-      </section>
+      </div>
+    </div>
+  </section>
 
-      <!-- PASO 3: Datos del Cliente y Confirmación a WhatsApp -->
-      <section class="step-content" id="step3">
-        <div class="section-title">
-          <h2>Tus Datos de Contacto</h2>
-          <p>Completarás tu cita y se enviará la confirmación instantánea a WhatsApp</p>
-        </div>
+  <!-- Por qué elegirnos -->
+  <section class="biz-section" id="experiencia">
+    <div class="container">
+      <div class="experience-wrap">
+        <div class="exp-text">
+          <span class="sub-title">LA DIFERENCIA ÉLITE</span>
+          <h2>Más que un corte, una pausa en tu día para recargar energía</h2>
+          <p>
+            En Élite Studio nos esforzamos para que cada visita sea un momento de desconexión. Nuestras sillas ergonómicas, climatización perfecta y profesionales con más de 7 años de experiencia garantizan que salgas luciendo y sintiéndote seguro.
+          </p>
 
-        <!-- Resumen del Agendamiento -->
-        <div class="booking-summary-box">
-          <h3><i class="ri-file-list-3-line"></i> Resumen de tu reserva:</h3>
-          <div class="summary-item">
-            <span>Servicio:</span>
-            <strong id="summaryService">-</strong>
-          </div>
-          <div class="summary-item">
-            <span>Especialista:</span>
-            <strong id="summaryStaff">-</strong>
-          </div>
-          <div class="summary-item">
-            <span>Fecha y Hora:</span>
-            <strong id="summaryDateTime">-</strong>
-          </div>
-          <div class="summary-item total">
-            <span>Total a pagar en el local:</span>
-            <strong id="summaryPrice">$0</strong>
-          </div>
-        </div>
+          <div class="exp-features">
+            <div class="exp-f-item">
+              <div class="exp-icon"><i class="ri-award-line"></i></div>
+              <div>
+                <h4>Barberos Certificados</h4>
+                <p>Especialistas en tendencias modernas y técnicas tradicionales de navaja.</p>
+              </div>
+            </div>
 
-        <!-- Formulario -->
-        <form id="bookingForm" class="booking-form" onsubmit="event.preventDefault();">
-          <div class="form-group">
-            <label for="clientName" class="form-label">Nombre y Apellido *</label>
-            <div class="input-icon-wrapper">
-              <i class="ri-user-line"></i>
-              <input type="text" id="clientName" class="form-control" placeholder="Ej: Carlos Gómez" required>
+            <div class="exp-f-item">
+              <div class="exp-icon"><i class="ri-sparkling-2-line"></i></div>
+              <div>
+                <h4>Higiene & Esterilización Grado Médico</h4>
+                <p>Herramientas sanitizadas individualmente frente a cada cliente.</p>
+              </div>
+            </div>
+
+            <div class="exp-f-item">
+              <div class="exp-icon"><i class="ri-smartphone-line"></i></div>
+              <div>
+                <h4>Agendamiento Digital sin Filas</h4>
+                <p>Llega a la hora pactada y tu puesto estará esperándote listo.</p>
+              </div>
             </div>
           </div>
 
-          <div class="form-group">
-            <label for="clientPhone" class="form-label">Número de WhatsApp *</label>
-            <div class="input-icon-wrapper">
-              <i class="ri-whatsapp-line"></i>
-              <input type="tel" id="clientPhone" class="form-control" placeholder="Ej: 312 345 6789" required>
+          <a href="agendar.html" class="btn btn-hero-primary mt-4">
+            <i class="ri-calendar-check-fill"></i> Reservar Mi Turno Ahora
+          </a>
+        </div>
+
+        <div class="exp-visual">
+          <div class="visual-card">
+            <i class="ri-store-3-line"></i>
+            <h3>Ambiente Climatizado & Lounge</h3>
+            <p>Música envolvente, TV con deportes en vivo y zona de espera cómoda.</p>
+            <div class="visual-badge">
+              <i class="ri-thumb-up-fill"></i> 4.9 / 5 estrellas en Google Reviews
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección Testimonios -->
+  <section class="biz-section bg-alt" id="testimonios">
+    <div class="container">
+      <div class="section-title text-center">
+        <span class="sub-title">TESTIMONIOS REALES</span>
+        <h2>Lo que opinan nuestros clientes</h2>
+        <p>La confianza de más de 2.800 personas que cuidan su imagen con nosotros.</p>
+      </div>
+
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p>"Excelente servicio. Agendar en línea fue súper fácil y cuando llegué el barbero ya tenía todo listo. El ritual de toalla caliente en la barba es de otro nivel."</p>
+          <div class="client-meta">
+            <strong>Andrés Morales</strong>
+            <span>Cliente habitual hace 1 año</span>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p>"Tomé el paquete VIP para mi matrimonio y quedé fascinado. La atención es impecable, el café delicioso y la asesoría de imagen muy acertada."</p>
+          <div class="client-meta">
+            <strong>Juan Pablo R.</strong>
+            <span>Novio Feliz</span>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p>"La puntualidad es lo que más valoro de este lugar. No pierdo tiempo esperando turno. Todo limpio y muy profesional."</p>
+          <div class="client-meta">
+            <strong>Sebastián Castro</strong>
+            <span>Emprendedor</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Horarios & Ubicación -->
+  <section class="biz-section" id="ubicacion">
+    <div class="container">
+      <div class="contact-box">
+        <div class="contact-info">
+          <span class="sub-title">ENCUÉNTRANOS</span>
+          <h2>Visítanos o Escríbenos</h2>
+          <p>Estamos ubicados en una zona accesible con parqueadero cercano.</p>
+
+          <div class="info-list">
+            <div class="info-item">
+              <i class="ri-map-pin-2-fill"></i>
+              <div>
+                <strong>Dirección:</strong>
+                <p>Calle Principal # 10 - 20, Sector Zona Rosa</p>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <i class="ri-time-fill"></i>
+              <div>
+                <strong>Horarios de Atención:</strong>
+                <p>Lunes a Sábado: 8:00 AM – 8:00 PM</p>
+                <p>Domingos y Festivos: 9:00 AM – 3:00 PM</p>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <i class="ri-whatsapp-fill"></i>
+              <div>
+                <strong>Atención por WhatsApp:</strong>
+                <p>+57 314 439 9660</p>
+              </div>
             </div>
           </div>
 
-          <div class="form-group">
-            <label for="clientNotes" class="form-label">Notas o preferencias adicionales (opcional)</label>
-            <textarea id="clientNotes" class="form-control" rows="2" placeholder="Ej: Tengo cabello largo / Prefiero tijera..."></textarea>
+          <div class="contact-cta-btns">
+            <a href="agendar.html" class="btn btn-hero-primary">
+              <i class="ri-calendar-line"></i> Agendar Cita Online
+            </a>
+            <a href="https://wa.me/573144399660?text=Hola,%20quisiera%20hacer%20una%20consulta%20sobre%20sus%20servicios." 
+               target="_blank" class="btn btn-whatsapp-direct">
+              <i class="ri-whatsapp-line"></i> Chat Directo
+            </a>
           </div>
+        </div>
 
-          <div class="step-actions dual">
-            <button type="button" class="btn btn-outline" id="btnBackToStep2">
-              <i class="ri-arrow-left-line"></i> Volver
-            </button>
-            <button type="button" class="btn btn-whatsapp" id="btnConfirmWhatsApp">
-              <i class="ri-whatsapp-fill"></i> Confirmar Cita por WhatsApp
-            </button>
+        <div class="map-placeholder">
+          <div class="map-inner">
+            <i class="ri-map-2-line"></i>
+            <h3>Mapa & Ubicación</h3>
+            <p>Ubicación céntrica con fácil acceso vehicular y transporte público.</p>
+            <span class="map-badge"><i class="ri-car-fill"></i> Parqueadero disponible</span>
           </div>
-        </form>
-      </section>
-
-    </div>
-
-    <!-- Footer de la App -->
-    <footer class="app-footer">
-      <p>Desarrollado con ❤️ por <strong>Yoider Yancy</strong> &bull; Soluciones Web para Negocios</p>
-      <div class="footer-links">
-        <a href="../../index.html"><i class="ri-arrow-left-circle-line"></i> Volver al Catálogo de Soluciones</a>
-      </div>
-    </footer>
-
-  </main>
-
-  <!-- Modal de Éxito / Feedback -->
-  <div class="modal-overlay" id="successModal">
-    <div class="modal-card">
-      <div class="modal-icon-success">
-        <i class="ri-checkbox-circle-fill"></i>
-      </div>
-      <h3>¡Solicitud de Cita Lista!</h3>
-      <p>Hemos abierto WhatsApp con los datos de tu reserva para que el negocio te confirme de inmediato.</p>
-      <div class="modal-buttons">
-        <button type="button" class="btn btn-primary" id="btnCloseModal">Aceptar</button>
+        </div>
       </div>
     </div>
-  </div>
+  </section>
 
-  <script src="js/app.js"></script>
+  <!-- Footer del Negocio -->
+  <footer class="biz-footer">
+    <div class="container biz-footer-inner">
+      <div class="biz-footer-brand">
+        <h3>ÉLITE STUDIO & SPA</h3>
+        <p>Cuidado personal y barbería de alto nivel.</p>
+      </div>
+      <div class="biz-footer-nav">
+        <a href="#inicio">Inicio</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#paquetes">Paquetes</a>
+        <a href="agendar.html">Agendar Cita</a>
+      </div>
+    </div>
+    <div class="biz-subfooter">
+      <p>&copy; 2026 Élite Studio &bull; Página web de demostración creada por <strong>Yoider Yancy</strong> &bull; <a href="../../index.html">Ver más soluciones</a></p>
+    </div>
+  </footer>
+
 </body>
 </html>
