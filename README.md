@@ -1,21 +1,43 @@
 # 🚀 Showcase de Soluciones Web & Demos para Negocios
 
-Plataforma comercial y catálogo interactivo de aplicaciones web ligeras, orientadas a emprendimientos y negocios locales (barberías, estéticas, consultorios, tiendas, restaurantes).
+Plataforma comercial y catálogo interactivo de aplicaciones web y sitios completos para emprendimientos y negocios locales (barberías, estéticas, tiendas de ropa, restaurantes y comidas rápidas).
 
 Desarrollado por **Yoider Yancy** &bull; WhatsApp Comercial: [+57 314 439 9660](https://wa.me/573144399660).
 
 ---
 
-## 📱 Demos Disponibles
+## 📱 Demos Disponibles (Sitio Web + Módulo Funcional)
 
-### 1. 📅 CitaFácil - Agendamiento de Citas Online
+Cada demo cuenta con una arquitectura de dos niveles:
+1. **Página Web Oficial del Negocio (`index.html`)**: Presentación comercial, identidad de marca, promociones, testimonios y ubicación.
+2. **Aplicación Web Interactiva**: Módulo de conversión conectado directamente a WhatsApp.
+
+---
+
+### 1. 📅 Élite Studio - Web & Citas Online
 - **Ubicación:** `demos/citas/`
-- **Público:** Barberías, salones de belleza, spas, consultorios médicos/odontológicos, veterinarias.
-- **Funcionalidades:**
-  - Selector rápido de nicho (Barbería, Spa, Consultorio, Pet Shop).
-  - Flujo guiado en 3 pasos: Servicio -> Especialista y Horario -> Datos del cliente.
-  - Generador automático de mensaje estructurado a **WhatsApp** para confirmación inmediata sin pasarelas de pago.
-  - Diseño 100% responsivo y adaptado para celulares.
+- **Público:** Barberías, spas, estéticas, consultorios médicos/odontológicos, veterinarias.
+- **Páginas:**
+  - `index.html`: Landing page con catálogo de cortes, paquetes VIP y opiniones.
+  - `agendar.html`: Selector de profesional, calendario dinámico de turnos y confirmación de reserva a WhatsApp.
+
+---
+
+### 2. 🛍️ Aura Studio - Tienda de Moda & Carrito a WhatsApp
+- **Ubicación:** `demos/catalogo/`
+- **Público:** Tiendas de ropa urbana, calzado, accesorios, repostería o boutiques.
+- **Páginas:**
+  - `index.html`: Web comercial con colecciones destacadas, beneficios de entrega y testimonios.
+  - `tienda.html`: Catálogo con buscador en vivo, selector de tallas/variantes, carrito interactivo y resumen de comanda a WhatsApp con cálculo de envío.
+
+---
+
+### 3. 🍔 Fuego & Leña - Web de Restaurante & Menú QR
+- **Ubicación:** `demos/restaurante/`
+- **Público:** Restaurantes, hamburgueserías, pizzerías, asadores y cafeterías.
+- **Páginas:**
+  - `index.html`: Web del restaurante con especialidades del chef, experiencia al carbón y reservas.
+  - `menu.html`: Menú QR digital con selector de **Mesa** o **Domicilio**, selección de adiciones (tocineta, quesos, salsas), bandeja flotante y comanda directa a cocina por WhatsApp.
 
 ---
 
@@ -23,15 +45,26 @@ Desarrollado por **Yoider Yancy** &bull; WhatsApp Comercial: [+57 314 439 9660](
 
 ```text
 negocios-web-demos/
-├── index.html                  # Vitrina comercial principal (Showroom)
+├── index.html                  # Showroom / Vitrina general de soluciones
 ├── assets/
 │   └── css/
 │       └── main.css            # Estilos del Showroom principal
 ├── demos/
-│   └── citas/                  # Demo interactiva de Citas
-│       ├── index.html
-│       ├── css/style.css
-│       └── js/app.js
+│   ├── citas/                  # Demo 1: Barbería/Spa & Citas Online
+│   │   ├── index.html          # Web del negocio
+│   │   ├── agendar.html        # App de agendamiento
+│   │   ├── css/
+│   │   └── js/
+│   ├── catalogo/               # Demo 2: Tienda & Carrito a WhatsApp
+│   │   ├── index.html          # Web comercial de moda
+│   │   ├── tienda.html         # Catálogo interactivo con carrito
+│   │   ├── css/
+│   │   └── js/
+│   └── restaurante/            # Demo 3: Restaurante & Menú QR
+│       ├── index.html          # Web oficial del restaurante
+│       ├── menu.html           # Menú QR y comanda
+│       ├── css/
+│       └── js/
 └── README.md
 ```
 
@@ -39,27 +72,18 @@ negocios-web-demos/
 
 ## 🌐 Publicación en GitHub Pages
 
-Para publicar este proyecto y tener tus demos funcionando en vivo con enlace público:
+Para publicar y compartir este catálogo con clientes:
 
-1. Inicializa el repositorio Git:
-   ```bash
-   git init
-   git add .
-   git commit -m "feat: initial commit with showcase and appointment booking demo"
-   ```
+```bash
+git add .
+git commit -m "feat: complete suite with booking, catalog and restaurant demos"
+git push origin main
+```
 
-2. Vincula tu repositorio remoto en GitHub:
-   ```bash
-   git remote add origin https://github.com/Yoider98/negocios-web-demos.git
-   git branch -M main
-   git push -u origin main
-   ```
+En tu repositorio de GitHub:
+1. Ve a **Settings** > **Pages**.
+2. En **Source** selecciona `Deploy from a branch`.
+3. Selecciona la rama `main` y `/ (root)`.
+4. Haz clic en **Save**.
 
-3. En GitHub:
-   - Ve a **Settings** > **Pages**.
-   - En **Build and deployment** > **Source**, selecciona `Deploy from a branch`.
-   - Elige la rama `main` y la carpeta `/ (root)`.
-   - Haz clic en **Save**.
-
-¡Tu catálogo quedará disponible en `https://yoider98.github.io/negocios-web-demos/`!
-
+¡Quedará activo en: `https://yoider98.github.io/negocios-web-demos/`!

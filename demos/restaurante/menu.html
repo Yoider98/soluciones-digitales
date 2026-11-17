@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menú QR Digital & Pedidos | Fuego & Leña</title>
+  
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/menu.css">
+</head>
+<body>
+
+  <!-- Barra Comercial Superior de Venta -->
+  <aside class="sales-banner">
+    <div class="sales-banner-content">
+      <span class="badge-demo"><i class="ri-flashlight-line"></i> DEMO EN VIVO</span>
+      <p class="banner-text">¿Quieres un menú QR interactivo con pedidos directos a tu WhatsApp?</p>
+      <a href="https://wa.me/573144399660?text=Hola%20Yoider,%20estoy%20probando%20el%20Men%C3%BA%20QR%20y%20quiero%20cotizarlo%20para%20mi%20restaurante." 
+         target="_blank" class="btn-banner-cta">
+        <i class="ri-whatsapp-line"></i> Cotizar para mi negocio
+      </a>
+    </div>
+  </aside>
+
+  <!-- Header del Menú -->
+  <header class="menu-header">
+    <div class="menu-container">
+      <div class="header-left">
+        <a href="index.html" class="btn-back" title="Volver al inicio">
+          <i class="ri-arrow-left-line"></i> <span>Volver</span>
+        </a>
+        <div class="header-brand">
+          <h1>FUEGO & LEÑA</h1>
+          <span class="status-chip"><i class="ri-record-circle-fill"></i> Cocina Abierta</span>
+        </div>
+      </div>
+
+      <div class="header-right">
+        <button type="button" class="btn-order-tray" id="btnOpenTray">
+          <i class="ri-restaurant-2-fill"></i>
+          <span class="tray-count" id="trayCount">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Contenedor Principal del Menú -->
+  <main class="menu-main container">
+    
+    <!-- Selector de Tipo de Servicio: Mesa o Domicilio -->
+    <section class="order-mode-card">
+      <div class="mode-header">
+        <i class="ri-map-pin-time-line"></i>
+        <span>¿Cómo vas a disfrutar tu pedido?</span>
+      </div>
+      <div class="mode-toggle-group">
+        <button type="button" class="mode-btn active" id="btnModeTable" data-mode="table">
+          <i class="ri-table-line"></i> Estoy en la Mesa
+        </button>
+        <button type="button" class="mode-btn" id="btnModeDelivery" data-mode="delivery">
+          <i class="ri-e-bike-2-line"></i> Pedir Domicilio
+        </button>
+      </div>
+
+      <div class="mode-input-wrap" id="tableInputWrap">
+        <label for="tableNumber">Indica el número de tu mesa:</label>
+        <select id="tableNumber" class="mode-select">
+          <option value="Mesa 1">Mesa 1 (Terraza)</option>
+          <option value="Mesa 2">Mesa 2 (Terraza)</option>
+          <option value="Mesa 3">Mesa 3 (Lounge)</option>
+          <option value="Mesa 4" selected>Mesa 4 (Principal)</option>
+          <option value="Mesa 5">Mesa 5 (Bar)</option>
+        </select>
+      </div>
+
+      <div class="mode-input-wrap hidden" id="deliveryInputWrap">
+        <label for="deliveryAddress">Dirección y Barrio de entrega:</label>
+        <input type="text" id="deliveryAddress" class="mode-text-input" placeholder="Ej: Cra 43A # 12-50, Apto 402">
+      </div>
+    </section>
+
+    <!-- Filtros de Categorías de la Carta -->
+    <nav class="menu-categories" aria-label="Categorías del menú">
+      <button class="cat-pill active" data-cat="all">Toda la Carta</button>
+      <button class="cat-pill" data-cat="burgers">🍔 Hamburguesas</button>
+      <button class="cat-pill" data-cat="parrilla">🥩 Parrilla & Ahumados</button>
+      <button class="cat-pill" data-cat="entradas">🍟 Entradas</button>
+      <button class="cat-pill" data-cat="bebidas">🍺 Bebidas & Cervezas</button>
+    </nav>
+
+    <!-- Listado de Platos -->
+    <div class="dishes-list" id="dishesList">
+      <!-- Generado dinámicamente con menu.js -->
+    </div>
+
+  </main>
+
+  <!-- Barra Flotante Inferior de Comanda (Sticky Bottom) -->
+  <aside class="sticky-order-bar" id="stickyOrderBar">
+    <div class="sticky-bar-content">
+      <div class="sticky-info">
+        <span class="sticky-qty" id="stickyQty">0 platos agregados</span>
+        <strong class="sticky-total" id="stickyTotal">$0</strong>
+      </div>
+      <button type="button" class="btn-view-order" id="btnViewOrder">
+        Ver Mi Orden <i class="ri-arrow-right-line"></i>
+      </button>
+    </div>
+  </aside>
+
+  <!-- Drawer Lateral de la Comanda -->
+  <div class="tray-drawer-overlay" id="trayOverlay"></div>
+  <aside class="tray-drawer" id="trayDrawer">
+    <div class="tray-header">
+      <div class="tray-title">
+        <i class="ri-restaurant-line"></i>
+        <h2>Tu Orden de Comanda</h2>
+      </div>
+      <button type="button" class="btn-close-tray" id="btnCloseTray">
+        <i class="ri-close-line"></i>
+      </button>
+    </div>
+
+    <!-- Items de la Comanda -->
+    <div class="tray-body" id="trayItemsList">
+      <!-- Renderizado dinámico -->
+    </div>
+
+    <!-- Resumen y Enviar a WhatsApp -->
+    <div class="tray-footer">
+      <div class="tray-summary">
+        <div class="line">
+          <span>Total de la Comanda:</span>
+          <strong id="trayTotalPrice">$0</strong>
+        </div>
+        <p class="tray-context-info" id="trayContextInfo">Servicio: <strong>Mesa 4</strong></p>
+      </div>
+
+      <div class="tray-form">
+        <input type="text" id="dinerName" class="tray-input" placeholder="Tu nombre para la orden *" required>
+        <textarea id="dinerNotes" class="tray-input" rows="2" placeholder="Instrucciones al chef (ej: salsa aparte, sin cebolla, término medio)..."></textarea>
+      </div>
+
+      <button type="button" class="btn-send-kitchen" id="btnSendKitchen">
+        <i class="ri-whatsapp-fill"></i> Enviar Comanda a Cocina por WhatsApp
+      </button>
+    </div>
+  </aside>
+
+  <!-- Modal Éxito -->
+  <div class="modal-overlay" id="orderSuccessModal">
+    <div class="modal-card">
+      <div class="modal-icon-success">
+        <i class="ri-restaurant-2-fill"></i>
+      </div>
+      <h3>¡Comanda Enviada a Cocina!</h3>
+      <p>Hemos generado tu orden en WhatsApp para que el chef y los meseros comiencen a preparar tus platos de inmediato.</p>
+      <button type="button" class="btn-modal-close" id="btnCloseModal">Entendido</button>
+    </div>
+  </div>
+
+  <script src="js/menu.js"></script>
+</body>
+</html>

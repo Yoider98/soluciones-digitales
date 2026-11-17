@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo Online con Pedido a WhatsApp | Aura Studio</title>
+  
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/shop.css">
+</head>
+<body>
+
+  <!-- Barra Comercial Superior de Venta -->
+  <aside class="sales-banner">
+    <div class="sales-banner-content">
+      <span class="badge-demo"><i class="ri-flashlight-line"></i> DEMO EN VIVO</span>
+      <p class="banner-text">¿Quieres un catálogo digital con carrito y pedidos directos a tu WhatsApp?</p>
+      <a href="https://wa.me/573144399660?text=Hola%20Yoider,%20estoy%20probando%20el%20Cat%C3%A1logo%20con%20Carrito%20y%20quiero%20cotizarlo%20para%20mi%20tienda." 
+         target="_blank" class="btn-banner-cta">
+        <i class="ri-whatsapp-line"></i> Cotizar para mi negocio
+      </a>
+    </div>
+  </aside>
+
+  <!-- Barra de Retorno y Header de la Tienda -->
+  <header class="catalog-header">
+    <div class="catalog-container">
+      <div class="header-left">
+        <a href="index.html" class="btn-back-home" title="Volver al inicio">
+          <i class="ri-arrow-left-line"></i> <span>Volver</span>
+        </a>
+        <div class="catalog-brand">
+          <h1>AURA<strong>STUDIO</strong></h1>
+          <span class="catalog-badge">Catálogo Digital</span>
+        </div>
+      </div>
+
+      <!-- Buscador y Carrito -->
+      <div class="header-right">
+        <div class="search-box">
+          <i class="ri-search-line"></i>
+          <input type="text" id="searchInput" placeholder="Buscar prenda o calzado...">
+        </div>
+
+        <button type="button" class="btn-cart-toggle" id="btnCartToggle" aria-label="Abrir carrito">
+          <i class="ri-shopping-cart-2-fill"></i>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="catalog-main container">
+    
+    <!-- Barra de Filtros por Categoría -->
+    <nav class="categories-bar" aria-label="Filtro de categorías">
+      <button class="filter-pill active" data-cat="all">Todos (8)</button>
+      <button class="filter-pill" data-cat="hoodies">Hoodies & Buzos</button>
+      <button class="filter-pill" data-cat="camisetas">Camisetas Oversize</button>
+      <button class="filter-pill" data-cat="sneakers">Sneakers</button>
+      <button class="filter-pill" data-cat="accesorios">Accesorios</button>
+    </nav>
+
+    <!-- Grid de Productos -->
+    <div class="products-grid" id="productsGrid">
+      <!-- Generado dinámicamente con shop.js -->
+    </div>
+
+  </main>
+
+  <!-- Carrito Flotante / Drawer Lateral -->
+  <div class="cart-drawer-overlay" id="cartOverlay"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-hidden="true">
+    <div class="drawer-header">
+      <div class="drawer-title">
+        <i class="ri-shopping-bag-3-fill"></i>
+        <h2>Tu Pedido (<span id="drawerCount">0</span>)</h2>
+      </div>
+      <button type="button" class="btn-close-drawer" id="btnCloseDrawer">
+        <i class="ri-close-line"></i>
+      </button>
+    </div>
+
+    <!-- Lista de Productos en el Carrito -->
+    <div class="drawer-body" id="cartItemsList">
+      <!-- Renderizado dinámico -->
+    </div>
+
+    <!-- Footer y Checkout -->
+    <div class="drawer-footer" id="cartFooter">
+      <div class="summary-line">
+        <span>Subtotal:</span>
+        <strong id="cartSubtotal">$0</strong>
+      </div>
+      <div class="summary-line">
+        <span>Envío estimado:</span>
+        <strong id="cartShipping">Calculando...</strong>
+      </div>
+      <div class="summary-line total">
+        <span>Total a Pagar:</span>
+        <strong id="cartTotal">$0</strong>
+      </div>
+
+      <!-- Formulario Rápido de Entrega -->
+      <form id="checkoutForm" class="checkout-form" onsubmit="event.preventDefault();">
+        <div class="form-title">
+          <i class="ri-map-pin-user-line"></i> Datos para entrega:
+        </div>
+        <input type="text" id="custName" class="form-input" placeholder="Nombre completo *" required>
+        <input type="tel" id="custPhone" class="form-input" placeholder="WhatsApp de contacto *" required>
+        <input type="text" id="custAddress" class="form-input" placeholder="Dirección completa y Barrio *" required>
+        <input type="text" id="custCity" class="form-input" placeholder="Ciudad / Municipio *" required>
+
+        <div class="payment-method-selector">
+          <label>Forma de Pago preferida:</label>
+          <select id="custPayment" class="form-input">
+            <option value="Nequi / Daviplata">📲 Nequi / Daviplata</option>
+            <option value="Transferencia Bancolombia">🏦 Transferencia Bancolombia</option>
+            <option value="Pago Contra Entrega">💵 Pago Contra Entrega (Efectivo)</option>
+            <option value="Tarjeta de Crédito">💳 Tarjeta de Crédito</option>
+          </select>
+        </div>
+
+        <button type="button" class="btn-checkout-whatsapp" id="btnSendWhatsAppOrder">
+          <i class="ri-whatsapp-fill"></i> Enviar Pedido a WhatsApp
+        </button>
+      </form>
+    </div>
+  </aside>
+
+  <!-- Modal de Pedido Enviado -->
+  <div class="modal-overlay" id="orderSuccessModal">
+    <div class="modal-card">
+      <div class="modal-icon-success">
+        <i class="ri-checkbox-circle-fill"></i>
+      </div>
+      <h3>¡Pedido Generado!</h3>
+      <p>Hemos abierto WhatsApp con la lista de tus productos y datos de entrega para procesar tu envío de inmediato.</p>
+      <button type="button" class="btn-modal-close" id="btnCloseSuccessModal">Entendido</button>
+    </div>
+  </div>
+
+  <script src="js/shop.js"></script>
+</body>
+</html>
