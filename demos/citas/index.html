@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agendamiento de Citas Online | Demo Comercial</title>
+  <!-- Google Fonts & Remix Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Barra Comercial Superior para Venta -->
+  <aside class="sales-banner">
+    <div class="sales-banner-content">
+      <span class="badge-demo"><i class="ri-flashlight-line"></i> DEMO EN VIVO</span>
+      <p class="banner-text">¿Quieres una app como esta con tu logo y catálogo para tu negocio?</p>
+      <a href="https://wa.me/573144399660?text=Hola%20Yoider,%20estoy%20probando%20la%20demo%20de%20Citas%20y%20quiero%20cotizarla%20para%20mi%20negocio." 
+         target="_blank" class="btn-banner-cta">
+        <i class="ri-whatsapp-line"></i> Cotizar para mi negocio
+      </a>
+    </div>
+  </aside>
+
+  <!-- Contenedor Principal de la App (Mobile-First / Card) -->
+  <main class="app-container">
+    
+    <!-- Selector de Tipo de Negocio (Para que el cliente vea la versatilidad) -->
+    <header class="app-header">
+      <div class="business-brand">
+        <div class="business-avatar" id="businessIcon">
+          <i class="ri-scissors-2-line"></i>
+        </div>
+        <div class="business-info">
+          <h1 id="businessName">Barbería & Spa Élite</h1>
+          <p id="businessSubtitle"><i class="ri-map-pin-2-fill"></i> Cl. Principal # 10 - 20 &bull; Abierto hoy</p>
+        </div>
+      </div>
+
+      <!-- Selector de plantilla rápida para impresionar al cliente -->
+      <div class="theme-selector">
+        <label for="nicheSelect"><i class="ri-palette-line"></i> Ver ejemplo como:</label>
+        <select id="nicheSelect">
+          <option value="barber">💈 Barbería / Peluquería</option>
+          <option value="spa">💆‍♀️ Spa & Estética</option>
+          <option value="dental">🩺 Consultorio / Dental</option>
+          <option value="pet">🐾 Veterinaria / Pet Shop</option>
+        </select>
+      </div>
+    </header>
+
+    <!-- Indicador de Pasos -->
+    <nav class="steps-progress" aria-label="Progreso de agendamiento">
+      <div class="step-pill active" data-step="1">
+        <span class="step-num">1</span>
+        <span class="step-label">Servicio</span>
+      </div>
+      <div class="step-divider"></div>
+      <div class="step-pill" data-step="2">
+        <span class="step-num">2</span>
+        <span class="step-label">Horario</span>
+      </div>
+      <div class="step-divider"></div>
+      <div class="step-pill" data-step="3">
+        <span class="step-num">3</span>
+        <span class="step-label">Tus Datos</span>
+      </div>
+    </nav>
+
+    <!-- Contenido de los Pasos -->
+    <div class="booking-card">
+      
+      <!-- PASO 1: Selección de Servicio -->
+      <section class="step-content active" id="step1">
+        <div class="section-title">
+          <h2>Elige el servicio que deseas</h2>
+          <p>Selecciona una o más opciones para tu cita</p>
+        </div>
+
+        <div class="services-list" id="servicesList">
+          <!-- Renderizado dinámico desde app.js -->
+        </div>
+
+        <div class="step-actions">
+          <button type="button" class="btn btn-primary" id="btnToStep2" disabled>
+            Continuar a Fecha y Hora <i class="ri-arrow-right-line"></i>
+          </button>
+        </div>
+      </section>
+
+      <!-- PASO 2: Especialista, Fecha y Hora -->
+      <section class="step-content" id="step2">
+        <div class="section-title">
+          <h2>Fecha y Horario</h2>
+          <p>Elige tu día preferido y el horario que más te convenga</p>
+        </div>
+
+        <!-- Selección de Profesional -->
+        <div class="form-group">
+          <label class="form-label"><i class="ri-user-star-line"></i> ¿Quién deseas que te atienda?</label>
+          <div class="staff-grid" id="staffGrid">
+            <!-- Renderizado dinámico -->
+          </div>
+        </div>
+
+        <!-- Selector de Días (Próximos 7 días) -->
+        <div class="form-group">
+          <label class="form-label"><i class="ri-calendar-event-line"></i> Selecciona el día</label>
+          <div class="days-slider" id="daysSlider">
+            <!-- Generado con JS -->
+          </div>
+        </div>
+
+        <!-- Selector de Horas Disponibles -->
+        <div class="form-group">
+          <label class="form-label"><i class="ri-time-line"></i> Horarios disponibles</label>
+          <div class="hours-grid" id="hoursGrid">
+            <!-- Generado con JS -->
+          </div>
+        </div>
+
+        <div class="step-actions dual">
+          <button type="button" class="btn btn-outline" id="btnBackToStep1">
+            <i class="ri-arrow-left-line"></i> Volver
+          </button>
+          <button type="button" class="btn btn-primary" id="btnToStep3" disabled>
+            Continuar a tus datos <i class="ri-arrow-right-line"></i>
+          </button>
+        </div>
+      </section>
+
+      <!-- PASO 3: Datos del Cliente y Confirmación a WhatsApp -->
+      <section class="step-content" id="step3">
+        <div class="section-title">
+          <h2>Tus Datos de Contacto</h2>
+          <p>Completarás tu cita y se enviará la confirmación instantánea a WhatsApp</p>
+        </div>
+
+        <!-- Resumen del Agendamiento -->
+        <div class="booking-summary-box">
+          <h3><i class="ri-file-list-3-line"></i> Resumen de tu reserva:</h3>
+          <div class="summary-item">
+            <span>Servicio:</span>
+            <strong id="summaryService">-</strong>
+          </div>
+          <div class="summary-item">
+            <span>Especialista:</span>
+            <strong id="summaryStaff">-</strong>
+          </div>
+          <div class="summary-item">
+            <span>Fecha y Hora:</span>
+            <strong id="summaryDateTime">-</strong>
+          </div>
+          <div class="summary-item total">
+            <span>Total a pagar en el local:</span>
+            <strong id="summaryPrice">$0</strong>
+          </div>
+        </div>
+
+        <!-- Formulario -->
+        <form id="bookingForm" class="booking-form" onsubmit="event.preventDefault();">
+          <div class="form-group">
+            <label for="clientName" class="form-label">Nombre y Apellido *</label>
+            <div class="input-icon-wrapper">
+              <i class="ri-user-line"></i>
+              <input type="text" id="clientName" class="form-control" placeholder="Ej: Carlos Gómez" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="clientPhone" class="form-label">Número de WhatsApp *</label>
+            <div class="input-icon-wrapper">
+              <i class="ri-whatsapp-line"></i>
+              <input type="tel" id="clientPhone" class="form-control" placeholder="Ej: 312 345 6789" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="clientNotes" class="form-label">Notas o preferencias adicionales (opcional)</label>
+            <textarea id="clientNotes" class="form-control" rows="2" placeholder="Ej: Tengo cabello largo / Prefiero tijera..."></textarea>
+          </div>
+
+          <div class="step-actions dual">
+            <button type="button" class="btn btn-outline" id="btnBackToStep2">
+              <i class="ri-arrow-left-line"></i> Volver
+            </button>
+            <button type="button" class="btn btn-whatsapp" id="btnConfirmWhatsApp">
+              <i class="ri-whatsapp-fill"></i> Confirmar Cita por WhatsApp
+            </button>
+          </div>
+        </form>
+      </section>
+
+    </div>
+
+    <!-- Footer de la App -->
+    <footer class="app-footer">
+      <p>Desarrollado con ❤️ por <strong>Yoider Yancy</strong> &bull; Soluciones Web para Negocios</p>
+      <div class="footer-links">
+        <a href="../../index.html"><i class="ri-arrow-left-circle-line"></i> Volver al Catálogo de Soluciones</a>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- Modal de Éxito / Feedback -->
+  <div class="modal-overlay" id="successModal">
+    <div class="modal-card">
+      <div class="modal-icon-success">
+        <i class="ri-checkbox-circle-fill"></i>
+      </div>
+      <h3>¡Solicitud de Cita Lista!</h3>
+      <p>Hemos abierto WhatsApp con los datos de tu reserva para que el negocio te confirme de inmediato.</p>
+      <div class="modal-buttons">
+        <button type="button" class="btn btn-primary" id="btnCloseModal">Aceptar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
