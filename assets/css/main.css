@@ -525,6 +525,285 @@ body {
 }
 
 /* =========================================
+   SECCIÓN COMPARATIVA (VENTAJAS VS PLATAFORMAS)
+   ========================================= */
+.comparison-section {
+  padding: 80px 0;
+  background: #ffffff;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.comparison-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .comparison-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.comp-card {
+  border-radius: var(--radius-lg);
+  padding: 36px 30px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.comp-card-bad {
+  background: #f8fafc;
+  border: 1.5px solid #e2e8f0;
+}
+
+.comp-card-good {
+  background: #ffffff;
+  border: 2px solid var(--primary);
+  box-shadow: 0 15px 35px -10px rgba(37, 99, 235, 0.18);
+  position: relative;
+}
+
+.comp-badge-recommended {
+  position: absolute;
+  top: -14px;
+  left: 30px;
+  background: linear-gradient(135deg, var(--primary), #3b82f6);
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: 999px;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
+}
+
+.comp-header {
+  margin-bottom: 24px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.comp-header h3 {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 6px;
+}
+
+.comp-header p {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+.comp-features-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 28px;
+  flex: 1;
+}
+
+.comp-feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+.comp-icon-cross {
+  color: #ef4444;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.comp-icon-check {
+  color: var(--whatsapp);
+  font-size: 1.25rem;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.comp-card-bad .comp-feature-item {
+  color: #64748b;
+}
+
+.comp-card-good .comp-feature-item {
+  color: #0f172a;
+  font-weight: 500;
+}
+
+.comp-card-good .comp-feature-item strong {
+  color: var(--text-main);
+  font-weight: 700;
+}
+
+/* =========================================
+   SECCIÓN DE PROCESO (CÓMO TRABAJAMOS)
+   ========================================= */
+.process-section {
+  padding: 85px 0;
+  background: var(--bg-page);
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 768px) {
+  .process-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.process-card {
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 36px 28px;
+  position: relative;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.process-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: #cbd5e1;
+}
+
+.process-step-num {
+  font-size: 2.8rem;
+  font-weight: 900;
+  line-height: 1;
+  color: #e2e8f0;
+  margin-bottom: 16px;
+  font-family: inherit;
+  transition: color 0.2s ease;
+}
+
+.process-card:hover .process-step-num {
+  color: #bfdbfe;
+}
+
+.process-icon-wrap {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  background: var(--primary-light);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.process-card h3 {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 10px;
+}
+
+.process-card p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
+/* =========================================
+   SECCIÓN DE PREGUNTAS FRECUENTES (FAQ)
+   ========================================= */
+.faq-section {
+  padding: 85px 0;
+  background: #ffffff;
+  border-top: 1px solid var(--border);
+}
+
+.faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.faq-item {
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-md);
+  background: #ffffff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  overflow: hidden;
+}
+
+.faq-item:hover {
+  border-color: #cbd5e1;
+}
+
+.faq-item[open] {
+  border-color: var(--primary);
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.08);
+}
+
+.faq-question {
+  padding: 20px 24px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-main);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+  user-select: none;
+}
+
+.faq-question::-webkit-details-marker {
+  display: none;
+}
+
+.faq-icon-chevron {
+  font-size: 1.25rem;
+  color: var(--text-muted);
+  transition: transform 0.25s ease, color 0.2s ease;
+}
+
+.faq-item[open] .faq-icon-chevron {
+  transform: rotate(180deg);
+  color: var(--primary);
+}
+
+.faq-answer {
+  padding: 0 24px 22px;
+  font-size: 0.94rem;
+  color: #475569;
+  line-height: 1.6;
+  border-top: 1px solid transparent;
+}
+
+.faq-item[open] .faq-answer {
+  border-top-color: #f1f5f9;
+  padding-top: 14px;
+}
+
+/* =========================================
    CTA BANNER SECTION
    ========================================= */
 .cta-banner-section {
@@ -600,4 +879,555 @@ body {
 .footer-contact a:hover {
   text-decoration: underline;
 }
+
+/* =========================================
+   MODAL DE COTIZACIÓN INTERACTIVA A MEDIDA
+   ========================================= */
+.quote-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(8px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.quote-modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.quote-modal-container {
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  width: 100%;
+  max-width: 680px;
+  max-height: 92vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.25);
+  transform: translateY(20px) scale(0.97);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.quote-modal-overlay.active .quote-modal-container {
+  transform: translateY(0) scale(1);
+}
+
+/* Barra de Progreso */
+.quote-progress-track {
+  height: 6px;
+  background: #f1f5f9;
+  width: 100%;
+  position: relative;
+}
+
+.quote-progress-fill {
+  height: 100%;
+  width: 25%;
+  background: linear-gradient(90deg, var(--primary), #3b82f6);
+  transition: width 0.3s ease;
+}
+
+/* Header del Modal */
+.quote-modal-header {
+  padding: 20px 24px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.quote-header-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.quote-badge-step {
+  background: var(--primary-light);
+  color: var(--primary);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.quote-header-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.quote-btn-close {
+  background: none;
+  border: none;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.quote-btn-close:hover {
+  background: #f1f5f9;
+  color: var(--text-main);
+}
+
+/* Contenido / Pasos del Modal */
+.quote-modal-body {
+  padding: 24px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.quote-step {
+  display: none;
+  animation: fadeInStep 0.25s ease forwards;
+}
+
+.quote-step.active {
+  display: block;
+}
+
+@keyframes fadeInStep {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.quote-step-title {
+  font-size: 1.28rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+
+.quote-step-subtitle {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+/* Opciones de selección en tarjetas (Paso 1 y 2 - Selección múltiple) */
+.quote-options-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+@media (min-width: 560px) {
+  .quote-options-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.quote-option-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 13px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-md);
+  background: #ffffff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+  position: relative;
+}
+
+.quote-option-card:hover {
+  border-color: #93c5fd;
+  background: #f8fafc;
+  transform: translateY(-1px);
+}
+
+.quote-option-card.selected {
+  border-color: var(--primary);
+  background: var(--primary-light);
+  box-shadow: 0 0 0 1px var(--primary);
+}
+
+.quote-option-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+  background: #f1f5f9;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.quote-option-card.selected .quote-option-icon {
+  background: var(--primary);
+  color: #ffffff;
+}
+
+.quote-option-text {
+  flex: 1;
+}
+
+.quote-option-text strong {
+  display: block;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--text-main);
+  line-height: 1.3;
+}
+
+.quote-option-text small {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+  line-height: 1.35;
+}
+
+/* Indicador checkbox interactivo */
+.quote-option-check {
+  width: 20px;
+  height: 20px;
+  border-radius: 6px;
+  border: 1.5px solid var(--border);
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: transparent;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.quote-option-card.selected .quote-option-check {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #ffffff;
+}
+
+/* Campo dinámico cuando se selecciona "Otro" */
+.quote-custom-field {
+  margin-top: 14px;
+  padding: 14px 16px;
+  background: #f8fafc;
+  border-radius: var(--radius-sm);
+  border: 1px dashed #cbd5e1;
+  display: none;
+  animation: fadeInStep 0.2s ease forwards;
+}
+
+.quote-custom-field.active {
+  display: block;
+}
+
+.quote-custom-field label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text-main);
+  display: block;
+  margin-bottom: 6px;
+}
+
+/* Caja de sugerencias de redacción para el paso de la idea */
+.quote-ideas-guide {
+  background: #eff6ff;
+  border-left: 4px solid var(--primary);
+  padding: 12px 14px;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  margin-bottom: 18px;
+}
+
+.quote-ideas-guide p {
+  font-size: 0.82rem;
+  color: #1e3a8a;
+  line-height: 1.45;
+  margin: 0;
+}
+
+.quote-ideas-guide strong {
+  color: #1e40af;
+}
+
+.quote-counter-wrap {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+/* Chips para Paso 3 (Multi-selección) */
+.quote-chips-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.quote-chip {
+  padding: 10px 16px;
+  border: 1.5px solid var(--border);
+  background: #ffffff;
+  border-radius: 999px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-main);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.quote-chip:hover {
+  border-color: #93c5fd;
+  background: #f8fafc;
+}
+
+.quote-chip.selected {
+  border-color: var(--primary);
+  background: var(--primary-light);
+  color: var(--primary);
+}
+
+.quote-chip i {
+  font-size: 1rem;
+  color: var(--text-muted);
+}
+
+.quote-chip.selected i {
+  color: var(--primary);
+}
+
+/* Campos de entrada para Paso 4 */
+.quote-form-group {
+  margin-bottom: 18px;
+}
+
+.quote-form-group label {
+  display: block;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 6px;
+}
+
+.quote-input,
+.quote-textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: var(--text-main);
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.quote-input:focus,
+.quote-textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.quote-textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+/* Footer de Botones del Modal */
+.quote-modal-footer {
+  padding: 16px 24px;
+  border-top: 1px solid #f1f5f9;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.quote-btn-back {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.quote-btn-back:hover {
+  background: #f1f5f9;
+  color: var(--text-main);
+}
+
+.quote-btn-next {
+  background: var(--primary);
+  color: #ffffff;
+  border: none;
+  font-weight: 700;
+  font-size: 0.92rem;
+  padding: 10px 22px;
+  border-radius: 999px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+  margin-left: auto;
+}
+
+.quote-btn-next:hover {
+  background: var(--primary-dark);
+  transform: translateY(-1px);
+}
+
+.quote-btn-submit {
+  background: var(--whatsapp);
+  color: #ffffff;
+  border: none;
+  font-weight: 800;
+  font-size: 0.95rem;
+  padding: 12px 24px;
+  border-radius: 999px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35);
+  transition: all 0.2s ease;
+  margin-left: auto;
+}
+
+.quote-btn-submit:hover {
+  background: var(--whatsapp-hover);
+  transform: translateY(-2px);
+}
+
+/* Enlace directo a WhatsApp en el pie */
+.quote-skip-wrap {
+  text-align: center;
+  padding: 0 24px 16px;
+  background: #ffffff;
+}
+
+.quote-skip-link {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.quote-skip-link:hover {
+  color: var(--whatsapp);
+  text-decoration: underline;
+}
+
+/* =========================================
+   BOTÓN FLOTANTE DE WHATSAPP (INFERIOR DERECHA)
+   ========================================= */
+.whatsapp-float-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background-color: var(--whatsapp);
+  color: #ffffff;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.45);
+  z-index: 1500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.25s ease, background-color 0.2s ease, box-shadow 0.25s ease;
+}
+
+.whatsapp-float-btn:hover {
+  background-color: var(--whatsapp-hover);
+  color: #ffffff;
+  transform: translateY(-4px) scale(1.06);
+  box-shadow: 0 12px 28px rgba(37, 211, 102, 0.55);
+}
+
+.whatsapp-float-tooltip {
+  position: absolute;
+  right: 70px;
+  background: #0f172a;
+  color: #ffffff;
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 8px 14px;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+  pointer-events: none;
+  opacity: 0;
+  transform: translateX(8px);
+  transition: all 0.2s ease;
+}
+
+.whatsapp-float-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -5px;
+  transform: translateY(-50%);
+  border-width: 5px 0 5px 5px;
+  border-style: solid;
+  border-color: transparent transparent transparent #0f172a;
+}
+
+.whatsapp-float-btn:hover .whatsapp-float-tooltip {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@media (max-width: 600px) {
+  .whatsapp-float-btn {
+    bottom: 18px;
+    right: 18px;
+    width: 52px;
+    height: 52px;
+    font-size: 28px;
+  }
+
+  .whatsapp-float-tooltip {
+    display: none;
+  }
+}
+
+
 
